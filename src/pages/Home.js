@@ -1,0 +1,351 @@
+import React, { useEffect, useRef, useState } from 'react';
+import { getImageUrl } from '../imageConfig';
+import './Home.css';
+
+function Home() {
+    const [scrollY, setScrollY] = useState(0);
+    const [showPopup, setShowPopup] = useState(true);
+    const sectionRefs = useRef([]);
+    const [formData, setFormData] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        message: ''
+    });
+    const [formStatus, setFormStatus] = useState({ type: '', message: '' });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    useEffect(() => {
+        let ticking = false;
+
+        const handleScroll = () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    setScrollY(window.scrollY);
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setFormStatus({ type: '', message: '' });
+
+        try {
+            const response = await fetch('https://qb0a00v3mg.execute-api.eu-west-3.amazonaws.com/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                setFormStatus({
+                    type: 'success',
+                    message: 'Thank you! Your message has been sent successfully.'
+                });
+                setFormData({
+                    firstName: '',
+                    lastName: '',
+                    email: '',
+                    phone: '',
+                    message: ''
+                });
+            } else {
+                setFormStatus({
+                    type: 'error',
+                    message: data.message || 'Something went wrong. Please try again.'
+                });
+            }
+        } catch (error) {
+            setFormStatus({
+                type: 'error',
+                message: 'Failed to send message. Please check your connection and try again.'
+            });
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
+    return (
+        <div className="home-page">
+            {/* Hero Section with Video Background */}
+            <section
+                ref={(el) => (sectionRefs.current[0] = el)}
+                className="hero-section video-hero loaded"
+            >
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="auto"
+                    className="hero-video"
+                >
+                    <source src="/images-new/home-hero-video.mp4" type="video/mp4" />
+                </video>
+                {showPopup && (
+                    <div className="hero-popup-overlay">
+                        <div className="hero-popup-content">
+                            <button
+                                className="popup-close-btn"
+                                onClick={() => setShowPopup(false)}
+                                aria-label="Close popup"
+                            >
+                                ×
+                            </button>
+                            <h2>Every Sunday</h2>
+                            <p className="time">11:00 AM</p>
+                            <p className="venue">The Venue, Cardiff</p>
+                        </div>
+                    </div>
+                )}
+            </section>
+
+            {/* Quote Section 1 */}
+            <section className="quote-section" ref={(el) => (sectionRefs.current[5] = el)}>
+                <div
+                    className="section-content animate-in"
+                    style={{
+                        transform: `translate3d(0, ${(scrollY - (sectionRefs.current[5]?.offsetTop || 0)) * -0.2}px, 0)`
+                    }}
+                >
+                    <h1 className="quote-text">
+                        Jesus said, "Come to me, all of you who are weary and carry heavy burdens, and I will give you rest. - Matthew 11:28
+                    </h1>
+                </div>
+            </section>
+
+            {/* Image Section 1 */}
+            <section
+                ref={(el) => (sectionRefs.current[1] = el)}
+                className="image-section loaded"
+            >
+                <div
+                    className="bg-image-wrapper"
+                    style={{
+                        backgroundImage: `url(${getImageUrl('homeSection1')})`,
+                        transform: `translate3d(0, ${(scrollY - (sectionRefs.current[1]?.offsetTop || 0)) * 0.3}px, 0)`
+                    }}
+                />
+            </section>
+
+            {/* Quote Section 2 */}
+            <section className="quote-section" ref={(el) => (sectionRefs.current[5] = el)}>
+                <div className="section-content animate-in">
+                    <h1 className="quote-text">
+                        To go from Death to Life, where the Father's grace rewrites the story.
+                    </h1>
+                </div>
+            </section>
+
+            {/* The Story Section */}
+            <section className="content-section">
+                <div className="section-content animate-in">
+                    <h2>Why Do We Exist?</h2>
+                    <p>
+                        It often begins in ordinary moments, when life feels unfinished and questions remain. The Way is formed out of a simple but deep conviction that Jesus still meets people in the middle of real life, and that the Church is called to walk closely with others through both beauty and brokenness. We believe the gospel is not an idea to be admired from a distance, but a life to be lived together patiently, honestly, and faithfully. Rooted in Cardiff, we seek to live among the people of this city as witnesses to the way, the truth, and the life of Jesus. The Way is not about building a platform, but about forming a people who walk faithfully with God and with one another for the sake of the world He loves.
+                    </p>
+                </div>
+            </section>
+
+            {/* Image Section 2 */}
+            <section
+                ref={(el) => (sectionRefs.current[2] = el)}
+                className="image-section loaded"
+            >
+                <div
+                    className="bg-image-wrapper"
+                    style={{
+                        backgroundImage: `url(${getImageUrl('homeSection2')})`,
+                        transform: `translate3d(0, ${(scrollY - (sectionRefs.current[2]?.offsetTop || 0)) * 0.3}px, 0)`
+                    }}
+                />
+            </section>
+
+            {/* Quote Section 3 */}
+            <section className="quote-section">
+                <div className="section-content animate-in">
+                    <h1 className="quote-text">
+                        To grow from life to fullness, where we abide in the Son, the hope of glory.
+                    </h1>
+                </div>
+            </section>
+
+            {/* The Belief Section */}
+            <section className="content-section">
+                <div className="section-content animate-in">
+                    <h2>What Do We Believe?</h2>
+                    <p>
+                        Before anything else, there is God, and everything begins with Him. We believe in one God, Father, Son, and Holy Spirit, eternally existing in perfect unity. We believe Jesus Christ is God incarnate, fully God and fully man, who lived a sinless life, died as our substitute, rose bodily from the dead, ascended into heaven, and now reigns as Lord. Through His death and resurrection, salvation is offered freely by grace through faith to all who repent and believe. We believe humanity was created in God's image but is fallen and unable to restore itself apart from Christ. New life comes through the regenerating work of the Holy Spirit, who indwells, transforms, and empowers believers for Christlike living and service.
+                    </p>
+                </div>
+            </section>
+
+            {/* Image Section 3 */}
+            <section
+                ref={(el) => (sectionRefs.current[3] = el)}
+                className="image-section loaded"
+            >
+                <div
+                    className="bg-image-wrapper"
+                    style={{
+                        backgroundImage: `url(${getImageUrl('homeSection3')})`,
+                        transform: `translate3d(0, ${(scrollY - (sectionRefs.current[3]?.offsetTop || 0)) * 0.3}px, 0)`
+                    }}
+                />
+            </section>
+
+            {/* Quote Section 4 */}
+            <section className="quote-section">
+                <div className="section-content animate-in">
+                    <h1 className="quote-text">
+                        To move from Fullness to Mission, where the Holy Spirit makes Christ's redemption known.
+                    </h1>
+                </div>
+            </section>
+
+            {/* The Team Section */}
+            <section className="content-section">
+                <div className="section-content animate-in">
+                    <h2>Who We Are?</h2>
+                    <p>
+                        Behind every new beginning are people who said yes before the outcome was visible. The Way is led by Noel and Geraldine, who serve as the founding elders and planting family in Cardiff. Their journey has been shaped by years of faithful ministry, deep personal loss, and living hope, forming in them a steady trust that God builds His Church. Heath and Leah serve alongside them in co-eldership and apostolic oversight, offering wisdom, accountability, and shared discernment. The Way is locally led, yet relationally connected within an apostolic household, following the biblical pattern of shared leadership, mutual accountability, and spiritual covering.
+                    </p>
+                </div>
+            </section>
+
+            {/* Image Section 4 */}
+            <section
+                ref={(el) => (sectionRefs.current[4] = el)}
+                className="image-section home-5-section loaded"
+            >
+                <div
+                    className="bg-image-wrapper"
+                    style={{
+                        backgroundImage: `url(${getImageUrl('homeSection4')})`,
+                        transform: `translate3d(0, ${(scrollY - (sectionRefs.current[4]?.offsetTop || 0)) * 0.3}px, 0)`
+                    }}
+                />
+            </section>
+
+            {/* The Invitation Section */}
+            <section className="content-section">
+                <div className="section-content animate-in">
+                    <h2>Where Do You Begin?</h2>
+                    <p>
+                        Every journey begins with a step, even when the way forward is unclear. The Way takes shape through relationship, shared life, and simple steps of obedience. Whether you are exploring faith, returning to church, or sensing a desire to walk with us in this season, you are warmly invited. You do not need to have all the answers, and you do not need to commit to anything. You are welcome to come as you are. If you are curious, interested, or quietly hopeful, we would love to hear from you. The Way is not about perfection, but about walking together toward Jesus, step by step, in faith, hope, and love.
+                    </p>
+                </div>
+            </section>
+
+            {/* Full-width Image Section */}
+            <section
+                ref={(el) => (sectionRefs.current[10] = el)}
+                className="image-section contact-image-section loaded"
+            >
+                <div
+                    className="bg-image-wrapper"
+                    style={{
+                        backgroundImage: `url(${getImageUrl('homeSection5')})`,
+                        transform: `translate3d(0, ${(scrollY - (sectionRefs.current[10]?.offsetTop || 0)) * 0.3}px, 0)`
+                    }}
+                />
+            </section>
+
+            {/* Contact Section */}
+            <section id="see-you-there" className="contact-section" style={{ paddingBottom: '20px', paddingTop: '40px' }}>
+                <div className="section-content animate-in">
+                    {formStatus.message && (
+                        <div className={`form-message ${formStatus.type}`}>
+                            {formStatus.message}
+                        </div>
+                    )}
+                    <form className="contact-form" onSubmit={handleSubmit}>
+                        <div className="form-row">
+                            <div className="form-group">
+                                <label htmlFor="firstName">First Name *</label>
+                                <input
+                                    type="text"
+                                    id="firstName"
+                                    name="firstName"
+                                    value={formData.firstName}
+                                    onChange={handleInputChange}
+                                    required
+                                />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="lastName">Last Name *</label>
+                                <input
+                                    type="text"
+                                    id="lastName"
+                                    name="lastName"
+                                    value={formData.lastName}
+                                    onChange={handleInputChange}
+                                    required
+                                />
+                            </div>
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="email">Email *</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleInputChange}
+                                required
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="phone">Phone</label>
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                value={formData.phone}
+                                onChange={handleInputChange}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="message">Message *</label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                value={formData.message}
+                                onChange={handleInputChange}
+                                required
+                            ></textarea>
+                        </div>
+                        <button type="submit" className="submit-button" disabled={isSubmitting}>
+                            {isSubmitting ? 'Sending...' : 'Submit'}
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    );
+}
+
+export default Home;

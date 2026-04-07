@@ -1,0 +1,981 @@
+/* Section 1 - About Us (White Background) */
+.team-about-section {
+    background-color: #FFFFFF;
+    padding: 40px 40px 60px 40px;
+}
+
+/* Parallax background wrapper for hero section */
+.team-page .hero-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.team-page .hero-section .bg-image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    will-change: transform;
+}
+
+.team-about-section .section-content {
+    max-width: 980px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Reduce padding between sections on Team page */
+.home-page .content-section {
+    padding: 60px 40px;
+}
+
+.team-about-section h1 {
+    font-family: 'futura-lt-w01-book', 'Futura', sans-serif;
+    font-size: 56px;
+    font-weight: 400;
+    color: #000000;
+    margin: 0 0 20px 0;
+    line-height: normal;
+}
+
+.team-about-section .subtitle {
+    font-family: 'futura-lt-w01-light', 'Futura', sans-serif;
+    font-size: 20px;
+    color: #000000;
+    margin: 0 0 30px 0;
+}
+
+.team-about-section .description {
+    font-family: 'futura-lt-w01-light', 'Futura', sans-serif;
+    font-size: 26px;
+    line-height: 1.8;
+    color: #5a5a5a;
+    margin: 0 0 50px 0;
+}
+
+.team-hero-image {
+    width: 100%;
+    max-width: 980px;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.team-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* Section 3 - Leadership Team Header */
+.leadership-team-section {
+    background-color: #000000;
+    padding: 60px 40px 5px 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.leadership-team-section .section-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.leadership-header {
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.leadership-text h2 {
+    font-family: 'futura-lt-w01-book', 'Futura', sans-serif;
+    font-size: 56px;
+    font-weight: 400;
+    color: #FFFFFF;
+    margin: 0 0 20px 0;
+    line-height: normal;
+}
+
+.leadership-text p {
+    font-family: 'futura-lt-w01-light', 'Futura', sans-serif;
+    font-size: 26px;
+    line-height: 1.8;
+    color: #FFFFFF;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+/* Team Split Sections - Only for team page */
+.team-page .split-section.team-leader-section {
+    min-height: auto;
+    max-height: none;
+    overflow: visible;
+    display: block;
+}
+
+.team-leader-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.team-leader-top {
+    display: flex;
+    flex-direction: row;
+    min-height: auto;
+    align-items: stretch;
+}
+
+.team-leader-section .team-image-side {
+    flex: 0 0 50%;
+    width: 50%;
+    padding: 0;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.team-leader-section .team-text-side {
+    flex: 0 0 50%;
+    width: 50%;
+    display: flex;
+    align-items: stretch;
+    padding: 0;
+    background-color: #FFFFFF;
+}
+
+.team-split-image-wrapper {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.team-split-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.team-page .split-section .split-content {
+    max-width: 100%;
+    padding: 80px 60px 60px 60px;
+    height: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.team-page .split-section .split-content p {
+    font-family: 'futura-lt-w01-light', 'Futura', sans-serif;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #5a5a5a;
+    margin: 0 0 15px 0;
+    transition: all 0.3s ease;
+}
+
+/* Specific positioning for first team member - show bottom of image */
+.image-left-section:first-of-type .team-split-image-wrapper img {
+    object-position: center bottom;
+}
+
+/* Specific positioning for third team member (team-leader-3) - show top of image */
+.image-left-section:nth-of-type(3) .team-split-image-wrapper img {
+    object-position: center top;
+}
+
+.team-split-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.team-expand-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 12px 0;
+    margin-top: 20px;
+    font-family: 'futura-lt-w01-book', 'Futura', sans-serif;
+    font-size: 16px;
+    color: #000000;
+    transition: opacity 0.3s ease;
+}
+
+.team-expand-btn:hover {
+    opacity: 0.7;
+}
+
+.team-expand-btn .expand-icon {
+    font-size: 20px;
+    color: #000000;
+    font-weight: 300;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000000;
+    border-radius: 50%;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.team-expand-btn .expand-text {
+    font-family: 'futura-lt-w01-book', 'Futura', sans-serif;
+    font-size: 16px;
+    color: #000000;
+}
+
+.team-expanded-content {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+    animation: slideDown 0.3s ease-out;
+}
+
+.team-expanded-content p {
+    font-family: 'futura-lt-w01-light', 'Futura', sans-serif;
+    font-size: 26px;
+    line-height: 1.8;
+    color: #5a5a5a;
+    margin: 0;
+}
+
+/* Team Grid Section Wrapper */
+.team-grid-section-wrapper {
+    background-color: #FFFFFF;
+    padding: 60px 40px;
+}
+
+.team-grid-section-wrapper .section-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Apostolic Household Section */
+.apostolic-section {
+    background-color: #000000;
+    padding: 60px 40px;
+}
+
+.apostolic-section .section-content {
+    max-width: 980px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.apostolic-section h2 {
+    font-family: 'futura-lt-w01-book', 'Futura', sans-serif;
+    font-size: 48px;
+    font-weight: 400;
+    color: #FFFFFF;
+    margin: 0 0 30px 0;
+    line-height: normal;
+}
+
+.apostolic-section h3 {
+    font-family: 'futura-lt-w01-book', 'Futura', sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: #FFFFFF;
+    margin: 40px 0 20px 0;
+    line-height: normal;
+}
+
+.apostolic-section p {
+    font-family: 'futura-lt-w01-light', 'Futura', sans-serif;
+    font-size: 22px;
+    line-height: 1.8;
+    color: #FFFFFF;
+    margin: 0 0 20px 0;
+}
+
+.apostolic-section p:last-child {
+    margin-bottom: 0;
+}
+
+.apostolic-section a {
+    color: #FFFFFF;
+    text-decoration: underline;
+    transition: opacity 0.3s ease;
+}
+
+.apostolic-section a:hover {
+    opacity: 0.7;
+}
+
+/* Team Images Grid - Simple 3x2 grid of images */
+.team-images-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.team-image-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.team-image-item>img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.team-image-expand-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    text-align: left;
+    transition: background-color 0.3s ease;
+    border-radius: 8px;
+}
+
+.team-image-expand-btn:hover {
+    background-color: #f5f5f5;
+}
+
+.team-image-expand-btn .expand-icon {
+    font-size: 20px;
+    color: #000000;
+    font-weight: 300;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000000;
+    border-radius: 50%;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.team-image-item .expand-icon {
+    transform: rotate(0deg);
+}
+
+.team-image-expand-btn .expand-name {
+    font-family: 'futura-lt-w01-book', 'Futura', sans-serif;
+    font-size: 16px;
+    color: #000000;
+    font-weight: 400;
+}
+
+.team-image-description {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    animation: slideDown 0.3s ease-out;
+}
+
+.team-image-description p {
+    font-family: 'futura-lt-w01-light', 'Futura', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #5a5a5a;
+    margin: 0;
+}
+
+/* Section 3.5 - Team Grid Main Section */
+.team-grid-main-section {
+    background-color: #FFFFFF;
+    padding: 80px 40px;
+}
+
+.team-grid-main-section .section-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Team Grid Section */
+.team-grid-section {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+    min-height: 600px;
+}
+
+.team-grid-section h3 {
+    font-family: 'futura-lt-w01-book', 'Futura', sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: #000000;
+    margin: 0 0 50px 0;
+    text-align: center;
+}
+
+/* Team Grid */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    width: 100%;
+    min-height: 400px;
+}
+
+.team-member-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.team-member-card .team-member-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background-color: #e0e0e0;
+}
+
+.team-member-card .team-member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.team-member-card .team-member-info h4 {
+    font-family: 'futura-lt-w01-book', 'Futura', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #000000;
+    margin: 0 0 8px 0;
+}
+
+.team-member-card .team-member-role {
+    font-family: 'futura-lt-w01-light', 'Futura', sans-serif;
+    font-size: 14px;
+    color: #5a5a5a;
+    margin: 0 0 12px 0;
+}
+
+.team-member-card .team-member-bio {
+    font-family: 'futura-lt-w01-light', 'Futura', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #5a5a5a;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1440px) {
+    .team-leader-top {
+        min-height: 400px;
+    }
+
+    .team-split-image-wrapper {
+        height: 400px;
+        min-height: 400px;
+        max-height: 400px;
+    }
+
+    .team-page .split-section .split-content {
+        padding: 80px 40px 40px 40px;
+        font-size: 18px;
+    }
+
+    .team-leader-bottom {
+        padding: 40px;
+    }
+
+    /* Move first team member image to show bottom in laptop view */
+    .image-left-section:first-of-type .team-split-image-wrapper img {
+        object-position: center bottom;
+    }
+
+    /* Keep third team member (team-leader-3) showing top in laptop view */
+    .image-left-section:nth-of-type(3) .team-split-image-wrapper img {
+        object-position: center top;
+    }
+}
+
+@media (max-width: 1200px) {
+    .team-leader-top {
+        min-height: 400px;
+    }
+
+    .team-split-image-wrapper {
+        height: 400px;
+        min-height: 400px;
+        max-height: 400px;
+    }
+
+    .team-page .split-section .split-content {
+        padding: 80px 40px 40px 40px;
+    }
+
+    .team-page .split-section .split-content p {
+        font-size: 20px;
+        line-height: 1.5;
+    }
+
+    .team-leader-bottom {
+        padding: 40px;
+    }
+
+    .expanded-bio-content p {
+        font-size: 18px;
+    }
+
+    /* Move first team member image to show bottom in smaller laptop view */
+    .image-left-section:first-of-type .team-split-image-wrapper img {
+        object-position: center bottom;
+    }
+
+    /* Keep third team member (team-leader-3) showing top in smaller laptop view */
+    .image-left-section:nth-of-type .team-split-image-wrapper img {
+        object-position: center top;
+    }
+}
+
+@media (max-width: 968px) {
+    .leadership-team-section {
+        padding: 60px 20px;
+    }
+
+    .leadership-text h2 {
+        font-size: 36px;
+    }
+
+    .leadership-text p {
+        font-size: 19px;
+    }
+
+    .team-leader-top {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .team-leader-section .team-image-side,
+    .team-leader-section .team-text-side {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+
+    .team-leader-section .team-image-side {
+        order: -1;
+    }
+
+    .team-split-image-wrapper {
+        min-height: 400px;
+        max-height: none;
+        height: auto;
+    }
+
+    .team-page .split-section .split-content {
+        max-height: none;
+        padding: 40px 20px;
+    }
+
+    .team-page .split-section .split-content p {
+        font-size: 22px !important;
+        line-height: 1.8;
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .team-page .split-section .split-content a {
+        word-break: break-all !important;
+        overflow-wrap: break-word !important;
+        display: inline-block;
+        max-width: 100%;
+    }
+
+    .apostolic-section p {
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+
+    .apostolic-section a {
+        word-break: break-all !important;
+        overflow-wrap: break-word !important;
+        display: inline-block !important;
+        max-width: 100% !important;
+    }
+
+    .team-leader-bottom {
+        padding: 40px 20px;
+    }
+
+    .expanded-bio-content p {
+        font-size: 19px;
+    }
+
+    .split-content .team-member-name {
+        font-size: 36px;
+    }
+
+    .team-expanded-content p {
+        font-size: 19px;
+    }
+
+    .team-grid-section-wrapper {
+        padding: 60px 20px;
+    }
+
+    .team-grid-section {
+        margin-top: 60px;
+    }
+
+    .team-grid-section h3 {
+        font-size: 28px;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 30px !important;
+    }
+
+    .team-images-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .team-image-item>img {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .team-images-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-image-item>img {
+        height: 350px;
+    }
+}
+
+/* Section 3 - Meet The Team (White Background) */
+.team-members-section {
+    background-color: #FFFFFF;
+    padding: 80px 40px;
+}
+
+.team-members-section .section-content {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.team-members-section h2 {
+    font-family: 'futura-lt-w01-book', 'Futura', sans-serif;
+    font-size: 38px;
+    font-weight: 400;
+    color: #000000;
+    margin: 0 0 20px 0;
+    text-align: center;
+    line-height: normal;
+}
+
+.horizontal-line {
+    width: 100px;
+    height: 2px;
+    background-color: #000000;
+    margin: 0 auto 50px auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+    .team-about-section,
+    .team-members-section {
+        padding: 50px 20px;
+    }
+
+    .team-about-section h1 {
+        font-size: 40px;
+    }
+
+    .team-about-section .subtitle {
+        font-size: 18px;
+    }
+
+    .team-about-section .description {
+        font-size: 19px;
+    }
+
+    .team-hero-image {
+        aspect-ratio: 3 / 4;
+    }
+
+    .team-members-section h2 {
+        font-size: 32px;
+    }
+}
+
+/* Section 4 - Our Clients (Light Blue Background) */
+.content-section h2 {
+    text-align: center;
+}
+
+.clients-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.client-logo {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.client-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Responsive Design for Clients Section */
+@media (max-width: 768px) {
+    .clients-grid {
+        gap: 30px;
+    }
+
+    .client-logo {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Animation styles */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-content.animate-in {
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.team-member-card {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.team-member-card.animate-in {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.team-member-card:nth-child(1).animate-in {
+    animation-delay: 0.1s;
+}
+
+.team-member-card:nth-child(2).animate-in {
+    animation-delay: 0.2s;
+}
+
+.team-member-card:nth-child(3).animate-in {
+    animation-delay: 0.3s;
+}
+
+.team-member-card:nth-child(4).animate-in {
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hover effects */
+.team-member-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.client-logo {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.client-logo:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+/* Responsive animations */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Team Image Overlay for Names/Titles */
+.team-image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 20px 30px;
+    text-align: center;
+}
+
+.team-image-overlay h3 {
+    font-family: 'futura-lt-w01-light', 'Futura', sans-serif;
+    font-size: 18px;
+    color: #FFFFFF;
+    margin: 0;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+}
+
+.team-split-image-wrapper {
+    position: relative;
+}
+
+/* Responsive adjustments for overlay */
+@media (max-width: 768px) {
+    .team-image-overlay {
+        padding: 15px 20px;
+    }
+
+    .team-image-overlay h3 {
+        font-size: 16px;
+    }
+}
+
+/* Subtitle styling for team overlay */
+.team-image-overlay p {
+    font-family: 'futura-lt-w01-light', 'Futura', sans-serif;
+    font-size: 16px;
+    color: #FFFFFF;
+    margin: 0;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+}
+
+.team-image-overlay h3 {
+    margin: 0 0 5px 0 !important;
+}
+
+@media (max-width: 768px) {
+    .team-image-overlay p {
+        font-size: 14px;
+    }
+}
+
+/* Adjustments for smaller laptops (14 inch and below) */
+@media (max-width: 1440px) {
+    .team-leader-top {
+        min-height: 600px;
+    }
+
+    .team-split-image-wrapper {
+        min-height: 600px;
+    }
+
+    .team-split-image-wrapper img {
+        object-position: center top;
+        min-height: 600px;
+    }
+
+    /* Reduce padding on smaller screens */
+    .team-page .split-section .split-content {
+        padding: 80px 40px 40px 40px;
+        min-height: 600px;
+    }
+
+    .team-page .split-section .split-content p {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 1200px) {
+    .team-leader-top {
+        min-height: 550px;
+    }
+
+    .team-split-image-wrapper {
+        min-height: 550px;
+    }
+
+    .team-split-image-wrapper img {
+        object-position: center top;
+        min-height: 550px;
+    }
+
+    .team-page .split-section .split-content {
+        padding: 80px 30px 30px 30px;
+        min-height: 550px;
+    }
+
+    .team-page .split-section .split-content p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+}

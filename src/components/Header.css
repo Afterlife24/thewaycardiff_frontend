@@ -1,0 +1,464 @@
+.site-header {
+    background-color: #000000;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: padding 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+    will-change: padding, box-shadow;
+}
+
+.site-header.scrolled {
+    padding: 10px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+.logo {
+    flex-shrink: 0;
+    z-index: 1001;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+.logo:hover {
+    opacity: 0.9;
+}
+
+.logo-img {
+    height: 70px;
+    width: auto;
+    transition: height 0.3s ease;
+}
+
+.site-header.scrolled .logo-img {
+    height: 60px;
+}
+
+/* Desktop Navigation */
+.main-nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 45px;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
+    position: relative;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-family: 'futura-lt-w01-light', 'Futura', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    transition: color 0.3s ease;
+    text-transform: lowercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    position: relative;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+.nav-menu li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ffffff;
+    transition: width 0.3s ease;
+    backface-visibility: hidden;
+}
+
+.nav-menu li a:hover::after,
+.nav-menu li a.active::after {
+    width: 100%;
+}
+
+.nav-menu li a:hover {
+    color: #ffffff;
+}
+
+.nav-menu li a.active {
+    color: #ffffff;
+    font-weight: 400;
+}
+
+/* Desktop Social Icons */
+.desktop-social-icons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.desktop-social-icons .give-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 20px;
+    background-color: #ffffff;
+    color: #000000;
+    text-decoration: none;
+    font-family: 'futura-lt-w01-book', 'Futura', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+    margin-right: 10px;
+}
+
+.desktop-social-icons .connect-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 20px;
+    background-color: #ffffff;
+    color: #000000;
+    text-decoration: none;
+    font-family: 'futura-lt-w01-book', 'Futura', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+    margin-right: 10px;
+}
+
+.desktop-social-icons .give-button:hover,
+.desktop-social-icons .connect-button:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+.desktop-social-icons a {
+    display: flex;
+    align-items: center;
+    transition: opacity 0.3s ease;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+.desktop-social-icons a:hover {
+    opacity: 0.7;
+}
+
+.desktop-social-icons img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+}
+
+/* Mobile Menu Toggle - Simple Centered Design */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1002;
+    position: relative;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+    position: absolute;
+}
+
+.mobile-menu-toggle span:nth-child(1) {
+    top: 12px;
+}
+
+.mobile-menu-toggle span:nth-child(2) {
+    top: 19px;
+}
+
+.mobile-menu-toggle span:nth-child(3) {
+    top: 26px;
+}
+
+/* Simple X when open */
+.mobile-menu-toggle.open span:nth-child(1) {
+    top: 19px;
+    transform: rotate(45deg);
+}
+
+.mobile-menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.open span:nth-child(3) {
+    top: 19px;
+    transform: rotate(-45deg);
+}
+
+/* Mobile Social Icons - Hidden on desktop */
+.mobile-social-icons {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    margin-top: 30px;
+    align-items: center;
+}
+
+.mobile-social-icons .connect-button-mobile,
+.mobile-social-icons .give-button-mobile {
+    display: block;
+    text-align: center;
+    padding: 12px 40px;
+    background-color: #ffffff;
+    color: #000000;
+    text-decoration: none;
+    font-family: 'futura-lt-w01-book', 'Futura', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    width: 100%;
+    max-width: 250px;
+}
+
+.mobile-social-icons .connect-button-mobile:active,
+.mobile-social-icons .give-button-mobile:active {
+    background-color: #e0e0e0;
+}
+
+.mobile-social-icons .social-icons-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 10px;
+}
+
+.mobile-social-icons .social-icons-row a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-social-icons .social-icons-row a:active {
+    opacity: 0.7;
+}
+
+.mobile-social-icons .social-icons-row img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+}
+
+/* Tablet and Mobile Styles */
+@media (max-width: 968px) {
+    .site-header {
+        padding: 15px 0;
+    }
+
+    .header-container {
+        padding: 0 20px;
+        flex-wrap: nowrap;
+    }
+
+    .logo-img {
+        height: 50px;
+    }
+
+    .site-header.scrolled .logo-img {
+        height: 45px;
+    }
+
+    /* Show mobile menu toggle */
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    /* Hide desktop social icons */
+    .desktop-social-icons {
+        display: none;
+    }
+
+    /* Mobile Navigation - Full Screen */
+    .main-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #000000;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        z-index: 999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow-y: auto;
+    }
+
+    .main-nav.mobile-open {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 0;
+        align-items: center;
+        padding: 0;
+        margin-bottom: 40px;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-menu li a {
+        display: block;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 300;
+        width: 100%;
+    }
+
+    .nav-menu li a::after {
+        display: none;
+    }
+
+    .nav-menu li a.active {
+        background-color: rgba(255, 255, 255, 0.1);
+        font-weight: 400;
+    }
+
+    /* Show mobile social icons */
+    .mobile-social-icons {
+        display: flex;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .header-container {
+        padding: 0 15px;
+    }
+
+    .logo-img {
+        height: 45px;
+    }
+
+    .site-header.scrolled .logo-img {
+        height: 40px;
+    }
+
+    .main-nav {
+        top: 0;
+    }
+
+    .main-nav.mobile-open {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-menu li a {
+        font-size: 18px;
+        padding: 16px 20px;
+    }
+
+    .mobile-social-icons {
+        gap: 18px;
+        padding: 25px 0 0;
+        margin-top: 25px;
+    }
+
+    .mobile-social-icons .connect-button-mobile,
+    .mobile-social-icons .give-button-mobile {
+        padding: 11px 35px;
+        font-size: 13px;
+        max-width: 220px;
+    }
+
+    .mobile-social-icons .social-icons-row {
+        gap: 18px;
+    }
+
+    .mobile-social-icons .social-icons-row img {
+        width: 22px;
+        height: 22px;
+    }
+
+    .mobile-menu-toggle {
+        width: 38px;
+        height: 38px;
+    }
+
+    .mobile-menu-toggle span {
+        width: 23px;
+    }
+
+    .mobile-menu-toggle span:nth-child(1) {
+        top: 11px;
+    }
+
+    .mobile-menu-toggle span:nth-child(2) {
+        top: 18px;
+    }
+
+    .mobile-menu-toggle span:nth-child(3) {
+        top: 25px;
+    }
+
+    .mobile-menu-toggle.open span:nth-child(1),
+    .mobile-menu-toggle.open span:nth-child(3) {
+        top: 18px;
+    }
+}
