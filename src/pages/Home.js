@@ -91,15 +91,15 @@ function Home() {
 
     return (
         <div className="home-page">
-            {/* Hero Section with GIF Background */}
+            {/* Hero Section with WebP Background */}
             <section
                 ref={(el) => (sectionRefs.current[0] = el)}
-                className="hero-section gif-hero loaded"
+                className="hero-section webp-hero loaded"
             >
                 <img
-                    src="/images-new/home-hero-video.gif"
+                    src="/images-new/home-hero-video.webp"
                     alt="The Way Church Cardiff"
-                    className="hero-gif"
+                    className="hero-webp"
                 />
                 {showPopup && (
                     <div className="hero-popup-overlay">

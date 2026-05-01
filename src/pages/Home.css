@@ -23,7 +23,8 @@
 
 /* Video Hero Section - larger height */
 .hero-section.video-hero,
-.hero-section.gif-hero {
+.hero-section.gif-hero,
+.hero-section.webp-hero {
     max-height: 600px;
     background-attachment: scroll;
 }
@@ -32,12 +33,13 @@
     opacity: 1;
 }
 
-/* GIF/Video Hero Section */
+/* GIF/Video/WebP Hero Section */
 .hero-section.video-hero,
-.hero-section.gif-hero {
+.hero-section.gif-hero,
+.hero-section.webp-hero {
     max-height: 700px;
     background-attachment: scroll;
-    /* Override fixed for video/gif */
+    /* Override fixed for video/gif/webp */
 }
 
 /* Video overlay to block controls */
@@ -52,7 +54,8 @@
 }
 
 .hero-video,
-.hero-gif {
+.hero-gif,
+.hero-webp {
     position: absolute;
     top: -10%;
     left: 0;
