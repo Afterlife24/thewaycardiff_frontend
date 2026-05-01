@@ -22,7 +22,8 @@
 }
 
 /* Video Hero Section - larger height */
-.hero-section.video-hero {
+.hero-section.video-hero,
+.hero-section.gif-hero {
     max-height: 600px;
     background-attachment: scroll;
 }
@@ -31,11 +32,12 @@
     opacity: 1;
 }
 
-/* Video Hero Section */
-.hero-section.video-hero {
+/* GIF/Video Hero Section */
+.hero-section.video-hero,
+.hero-section.gif-hero {
     max-height: 700px;
     background-attachment: scroll;
-    /* Override fixed for video */
+    /* Override fixed for video/gif */
 }
 
 /* Video overlay to block controls */
@@ -49,7 +51,8 @@
     pointer-events: none;
 }
 
-.hero-video {
+.hero-video,
+.hero-gif {
     position: absolute;
     top: -10%;
     left: 0;
@@ -58,12 +61,11 @@
     object-fit: cover;
     object-position: center;
     z-index: 0;
-    /* Enhance video quality rendering */
+    /* Enhance quality rendering */
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    pointer-events: none;
 }
 
 /* Hide video controls completely */

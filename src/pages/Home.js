@@ -6,7 +6,6 @@ function Home() {
     const [scrollY, setScrollY] = useState(0);
     const [showPopup, setShowPopup] = useState(true);
     const sectionRefs = useRef([]);
-    const videoRef = useRef(null);
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
@@ -37,62 +36,6 @@ function Home() {
         };
     }, []);
 
-    // Force video to play on mount and handle visibility
-    useEffect(() => {
-        const video = videoRef.current;
-        if (!video) return;
-
-        const playVideo = async () => {
-            try {
-                // Set video properties
-                video.muted = true;
-                video.playsInline = true;
-                video.setAttribute('playsinline', '');
-                video.setAttribute('webkit-playsinline', '');
-
-                // Try to play
-                const playPromise = video.play();
-                if (playPromise !== undefined) {
-                    await playPromise;
-                }
-            } catch (error) {
-                console.log('Video autoplay prevented:', error);
-                // Retry on user interaction
-                const playOnInteraction = async () => {
-                    try {
-                        await video.play();
-                        document.removeEventListener('click', playOnInteraction);
-                        document.removeEventListener('touchstart', playOnInteraction);
-                    } catch (e) {
-                        console.log('Retry failed:', e);
-                    }
-                };
-                document.addEventListener('click', playOnInteraction, { once: true });
-                document.addEventListener('touchstart', playOnInteraction, { once: true });
-            }
-        };
-
-        // Use intersection observer to play when visible
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        playVideo();
-                    }
-                });
-            },
-            { threshold: 0.5 }
-        );
-
-        observer.observe(video);
-
-        // Also try to play immediately
-        playVideo();
-
-        return () => {
-            observer.disconnect();
-        };
-    }, []);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -148,27 +91,16 @@ function Home() {
 
     return (
         <div className="home-page">
-            {/* Hero Section with Video Background */}
+            {/* Hero Section with GIF Background */}
             <section
                 ref={(el) => (sectionRefs.current[0] = el)}
-                className="hero-section video-hero loaded"
+                className="hero-section gif-hero loaded"
             >
-                <div className="video-overlay"></div>
-                <video
-                    ref={videoRef}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    preload="auto"
-                    className="hero-video"
-                    poster="/images-new/home-section-1.jpg"
-                    webkit-playsinline="true"
-                    x5-playsinline="true"
-                    x-webkit-airplay="allow"
-                >
-                    <source src="/images-new/home-hero-video.mp4" type="video/mp4" />
-                </video>
+                <img
+                    src="/images-new/home-hero-video.gif"
+                    alt="The Way Church Cardiff"
+                    className="hero-gif"
+                />
                 {showPopup && (
                     <div className="hero-popup-overlay">
                         <div className="hero-popup-content">
