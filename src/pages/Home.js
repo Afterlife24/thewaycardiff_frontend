@@ -37,18 +37,61 @@ function Home() {
         };
     }, []);
 
-    // Force video to play on mount
+    // Force video to play on mount and handle visibility
     useEffect(() => {
-        if (videoRef.current) {
-            const playVideo = async () => {
-                try {
-                    await videoRef.current.play();
-                } catch (error) {
-                    console.log('Video autoplay failed:', error);
+        const video = videoRef.current;
+        if (!video) return;
+
+        const playVideo = async () => {
+            try {
+                // Set video properties
+                video.muted = true;
+                video.playsInline = true;
+                video.setAttribute('playsinline', '');
+                video.setAttribute('webkit-playsinline', '');
+
+                // Try to play
+                const playPromise = video.play();
+                if (playPromise !== undefined) {
+                    await playPromise;
                 }
-            };
-            playVideo();
-        }
+            } catch (error) {
+                console.log('Video autoplay prevented:', error);
+                // Retry on user interaction
+                const playOnInteraction = async () => {
+                    try {
+                        await video.play();
+                        document.removeEventListener('click', playOnInteraction);
+                        document.removeEventListener('touchstart', playOnInteraction);
+                    } catch (e) {
+                        console.log('Retry failed:', e);
+                    }
+                };
+                document.addEventListener('click', playOnInteraction, { once: true });
+                document.addEventListener('touchstart', playOnInteraction, { once: true });
+            }
+        };
+
+        // Use intersection observer to play when visible
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        playVideo();
+                    }
+                });
+            },
+            { threshold: 0.5 }
+        );
+
+        observer.observe(video);
+
+        // Also try to play immediately
+        playVideo();
+
+        return () => {
+            observer.disconnect();
+        };
     }, []);
 
     const handleInputChange = (e) => {
@@ -110,6 +153,7 @@ function Home() {
                 ref={(el) => (sectionRefs.current[0] = el)}
                 className="hero-section video-hero loaded"
             >
+                <div className="video-overlay"></div>
                 <video
                     ref={videoRef}
                     autoPlay
@@ -118,9 +162,10 @@ function Home() {
                     playsInline
                     preload="auto"
                     className="hero-video"
-                    controls={false}
-                    disablePictureInPicture
-                    controlsList="nodownload nofullscreen noremoteplayback"
+                    poster="/images-new/home-section-1.jpg"
+                    webkit-playsinline="true"
+                    x5-playsinline="true"
+                    x-webkit-airplay="allow"
                 >
                     <source src="/images-new/home-hero-video.mp4" type="video/mp4" />
                 </video>
