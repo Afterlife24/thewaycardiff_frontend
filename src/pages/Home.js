@@ -6,6 +6,7 @@ function Home() {
     const [scrollY, setScrollY] = useState(0);
     const [showPopup, setShowPopup] = useState(true);
     const sectionRefs = useRef([]);
+    const videoRef = useRef(null);
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
@@ -34,6 +35,20 @@ function Home() {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
+    }, []);
+
+    // Force video to play on mount
+    useEffect(() => {
+        if (videoRef.current) {
+            const playVideo = async () => {
+                try {
+                    await videoRef.current.play();
+                } catch (error) {
+                    console.log('Video autoplay failed:', error);
+                }
+            };
+            playVideo();
+        }
     }, []);
 
     const handleInputChange = (e) => {
@@ -96,12 +111,16 @@ function Home() {
                 className="hero-section video-hero loaded"
             >
                 <video
+                    ref={videoRef}
                     autoPlay
                     loop
                     muted
                     playsInline
                     preload="auto"
                     className="hero-video"
+                    controls={false}
+                    disablePictureInPicture
+                    controlsList="nodownload nofullscreen noremoteplayback"
                 >
                     <source src="/images-new/home-hero-video.mp4" type="video/mp4" />
                 </video>
