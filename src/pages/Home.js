@@ -97,7 +97,7 @@ function Home() {
                 className="hero-section webp-hero loaded"
             >
                 <img
-                    src="/images-new/home-hero-video.webp"
+                    src="/images-new/home-hero-video-compressed.webp"
                     alt="The Way Church Cardiff"
                     className="hero-webp"
                 />
