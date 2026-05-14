@@ -128,7 +128,7 @@ function Home() {
                     }}
                 >
                     <h1 className="quote-text">
-                        Jesus said, "Come to me, all of you who are weary and carry heavy burdens, and I will give you rest. - Matthew 11:28
+                        Jesus told him, “I am the way, the truth, and the life. No one can come to the Father except through me. - John 14:6
                     </h1>
                 </div>
             </section>

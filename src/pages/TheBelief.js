@@ -213,7 +213,7 @@ function TheBelief() {
                     <div
                         className="animate-in"
                     >
-                        <h2>THE END OF<br />ALL THINGS</h2>
+                        <h2>THE PERSON<br />&<br />WORK OF THE<br />HOLY SPIRIT</h2>
                     </div>
                 </div>
                 <div className="split-left">
@@ -221,7 +221,7 @@ function TheBelief() {
                         className="split-content animate-in"
                     >
                         <p>
-                            We believe in the personal return of our Lord Jesus Christ in power and glory. We believe that God will raise the dead bodily and judge the world, assigning the unbeliever to condemnation and eternal conscious punishment and the believer to eternal blessedness and joy with the Lord in the new heaven and the new earth, to the praise of His glorious grace.
+                            We believe that the Holy Spirit, in all that He does, glorifies the Lord Jesus Christ. He convicts the world of its guilt. He regenerates sinners, and in Him they are baptized into union with Christ and adopted as heirs in the family of God. He also indwells, illuminates, guides, equips and empowers believers for Christ-like living and service.
                         </p>
                     </div>
                 </div>
@@ -276,12 +276,14 @@ function TheBelief() {
             </section>
 
             {/* Split Section - Heading RIGHT, Text LEFT */}
+            
+
             <section className="split-section mission-section">
                 <div className="split-right mission-heading">
                     <div
                         className="animate-in"
                     >
-                        <h2>THE PERSON<br />&<br />WORK OF THE<br />HOLY SPIRIT</h2>
+                        <h2>THE END OF<br />ALL THINGS</h2>
                     </div>
                 </div>
                 <div className="split-left">
@@ -289,7 +291,7 @@ function TheBelief() {
                         className="split-content animate-in"
                     >
                         <p>
-                            We believe that the Holy Spirit, in all that He does, glorifies the Lord Jesus Christ. He convicts the world of its guilt. He regenerates sinners, and in Him they are baptized into union with Christ and adopted as heirs in the family of God. He also indwells, illuminates, guides, equips and empowers believers for Christ-like living and service.
+                            We believe in the personal return of our Lord Jesus Christ in power and glory. We believe that God will raise the dead bodily and judge the world, assigning the unbeliever to condemnation and eternal conscious punishment and the believer to eternal blessedness and joy with the Lord in the new heaven and the new earth, to the praise of His glorious grace.
                         </p>
                     </div>
                 </div>
