@@ -111,10 +111,10 @@ function Home() {
                             >
                                 ×
                             </button>
-                            <p className="date">Sunday, 7th June</p>
-                            <p className="time">11:00 AM</p>
-                            <p className="venue">The Paget Rooms, Penarth</p>
-                            <p className="postcode">CF64 3EG</p>
+                            <h2 className="date">Sunday, 7th June</h2>
+                            <h2 className="time">11:00 AM</h2>
+                            <h2 className="venue">The Paget Rooms, Penarth</h2>
+                            <h2 className="postcode">CF64 3EG</h2>
                         </div>
                     </div>
                 )}
