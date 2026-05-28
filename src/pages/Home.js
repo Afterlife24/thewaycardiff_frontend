@@ -111,7 +111,6 @@ function Home() {
                             >
                                 ×
                             </button>
-                            <h2>Join Us This Sunday</h2>
                             <p className="date">Sunday, 7th June</p>
                             <p className="time">11:00 AM</p>
                             <p className="venue">The Paget Rooms, Penarth</p>
