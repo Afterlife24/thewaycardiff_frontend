@@ -16,7 +16,7 @@ function Footer() {
                     <a href="https://www.facebook.com/share/1Bj44P8xUq/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                         <img src={getImageUrl('iconFacebook')} alt="Facebook" />
                     </a>
-                    <a href="https://www.tiktok.com/@geraldinefrancis21?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                    <a href="https://www.tiktok.com/@thewaychurchcardiff?_r=1&_t=ZS-96lHUf7Wdfk" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
                         <img src={getImageUrl('iconTiktok')} alt="TikTok" />
                     </a>
                 </div>
