@@ -41,3 +41,15 @@
     height: 24px;
     filter: brightness(0) invert(1);
 }
+
+.privacy-link {
+    color: #ffffff;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.privacy-link:hover {
+    opacity: 1;
+    text-decoration: underline;
+}

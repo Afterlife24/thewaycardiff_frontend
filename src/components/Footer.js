@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { getImageUrl } from '../imageConfig';
 import './Footer.css';
 
@@ -20,7 +21,7 @@ function Footer() {
                         <img src={getImageUrl('iconTiktok')} alt="TikTok" />
                     </a>
                 </div>
-                <p>&copy; {new Date().getFullYear()} The Way Church Cardiff | Powered by AfterLife<br />A Liberty Church Plant </p>
+                <p>&copy; {new Date().getFullYear()} The Way Church Cardiff | Powered by Autonomiq<br />A Liberty Church Plant | <Link to="/privacy-notice" className="privacy-link">Privacy Notice</Link></p>
             </div>
         </footer>
     );

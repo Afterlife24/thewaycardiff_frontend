@@ -8,6 +8,7 @@ import AboutTheStory from './pages/AboutTheStory';
 import TheBelief from './pages/TheBelief';
 import TheTeam from './pages/TheTeam';
 import TheInvitation from './pages/TheInvitation';
+import PrivacyNotice from './pages/PrivacyNotice';
 import './App.css';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
                         <Route path="/the-belief" element={<TheBelief />} />
                         <Route path="/the-team" element={<TheTeam />} />
                         <Route path="/the-invitation" element={<TheInvitation />} />
+                        <Route path="/privacy-notice" element={<PrivacyNotice />} />
                     </Routes>
                 </main>
                 <Footer />
