@@ -1,0 +1,182 @@
+.policies-page {
+    background-color: #ffffff;
+    min-height: 100vh;
+    padding: 120px 20px 80px;
+}
+
+.policies-container {
+    max-width: 820px;
+    margin: 0 auto;
+}
+
+.accordion {
+    width: 100%;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #d8d8d8;
+}
+
+.accordion-header {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 22px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-family: 'futura-lt-w01-light', 'Futura', sans-serif;
+    font-size: 1.05rem;
+    color: #3a3a3a;
+    letter-spacing: 0.3px;
+    text-align: left;
+    transition: color 0.3s ease;
+}
+
+.accordion-header:hover {
+    color: #000;
+}
+
+.accordion-icon {
+    display: flex;
+    align-items: center;
+    color: #3a3a3a;
+    transition: transform 0.3s ease;
+}
+
+.accordion-icon.open {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    padding: 5px 5px 30px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.accordion-content section {
+    margin-bottom: 25px;
+}
+
+.accordion-content h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.accordion-content p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 14px;
+}
+
+.accordion-content ul {
+    margin-left: 20px;
+    margin-bottom: 14px;
+}
+
+.accordion-content li {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.accordion-content a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.accordion-content a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Retention table */
+.retention-table {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.retention-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid #ddd;
+}
+
+.retention-row:last-child {
+    border-bottom: none;
+}
+
+.retention-header {
+    background-color: #f5f5f5;
+    font-weight: 600;
+}
+
+.retention-type,
+.retention-period {
+    padding: 15px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.retention-type {
+    border-right: 1px solid #ddd;
+}
+
+.retention-row:nth-child(even):not(.retention-header) {
+    background-color: #fafafa;
+}
+
+@media (max-width: 768px) {
+    .policies-page {
+        padding: 100px 15px 60px;
+    }
+
+    .accordion-header {
+        font-size: 1rem;
+        padding: 18px 2px;
+    }
+
+    .accordion-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .accordion-content p,
+    .accordion-content li {
+        font-size: 0.9rem;
+    }
+
+    .retention-row {
+        grid-template-columns: 1fr;
+    }
+
+    .retention-type {
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        font-weight: 600;
+    }
+
+    .retention-period {
+        background-color: #f9f9f9;
+    }
+}
