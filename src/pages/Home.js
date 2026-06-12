@@ -111,7 +111,7 @@ function Home() {
                             >
                                 ×
                             </button>
-                            <p className="date">Sunday, 7th June</p>
+                            <p className="date">Sundays</p>
                             <p className="time">11:00 AM</p>
                             <p className="venue">The Paget Rooms, Penarth</p>
                             <p className="postcode">CF64 3EG</p>
