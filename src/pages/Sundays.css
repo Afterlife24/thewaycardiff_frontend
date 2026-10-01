@@ -1,0 +1,167 @@
+/* ============================================================
+   Sundays.css — styles specific to the /sundays page
+   Shared layout classes (split-section, content-section, etc.)
+   are defined globally and apply here automatically.
+   ============================================================ */
+
+/* ── Hero ── */
+.sundays-hero {
+    position: relative;
+    height: 60vh;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sundays-hero-overlay {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 24px;
+    /* semi-transparent scrim for legibility without hiding the image */
+    background: rgba(0, 0, 0, 0.42);
+    padding: 32px 48px;
+    border-radius: 2px;
+}
+
+.sundays-hero-heading {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: #ffffff;
+    margin: 0 0 12px;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+    font-weight: 400;
+}
+
+.sundays-hero-sub {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    color: rgba(255, 255, 255, 0.88);
+    margin: 0;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* ── Service details section ── */
+.sundays-details-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+/* Info grid — three cards in a row on desktop, stacked on mobile */
+.sundays-info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.sundays-info-card {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 28px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.sundays-info-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.55;
+    margin-bottom: 6px;
+}
+
+.sundays-info-value {
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+.sundays-postcode {
+    font-weight: 600;
+    letter-spacing: 0.06em;
+}
+
+/* ── Image break ── */
+.sundays-image-break {
+    height: 40vh;
+    min-height: 260px;
+}
+
+/* ── Map link ── */
+.sundays-map-link {
+    display: inline-block;
+    margin-top: 8px;
+    opacity: 0.75;
+    transition: opacity 0.2s ease;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.sundays-map-link:hover {
+    opacity: 1;
+}
+
+/* ── CTA section ── */
+.sundays-cta-section {
+    padding-top: 60px;
+    padding-bottom: 80px;
+    text-align: center;
+}
+
+.sundays-cta-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+.sundays-cta-btn {
+    display: inline-block;
+    padding: 14px 32px;
+    font-size: 0.8rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: opacity 0.2s ease, background 0.2s ease;
+}
+
+.sundays-cta-primary {
+    background: #ffffff;
+    color: #000000;
+}
+
+.sundays-cta-primary:hover {
+    opacity: 0.85;
+}
+
+.sundays-cta-secondary {
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    color: inherit;
+}
+
+.sundays-cta-secondary:hover {
+    border-color: rgba(255, 255, 255, 0.9);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .sundays-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sundays-hero-overlay {
+        padding: 24px 20px;
+    }
+
+    .sundays-cta-links {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .sundays-cta-btn {
+        text-align: center;
+    }
+}

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { getImageUrl } from '../imageConfig';
+import SEO from '../components/SEO';
 import './TheTeam.css';
 
 function TheTeam() {
@@ -57,6 +58,12 @@ function TheTeam() {
 
     return (
         <div className="home-page team-page">
+            <SEO
+                title="Church Leadership | The Way Church Cardiff"
+                description="Meet the leadership of The Way Church Cardiff. Noel and Geraldine lead as founders, supported by apostolic oversight and a relationally connected team."
+                canonical="/the-team"
+            />
+
             {/* Hero Section */}
             <section
                 ref={(el) => (sectionRefs.current[0] = el)}
@@ -69,6 +76,10 @@ function TheTeam() {
                         transform: `translate3d(0, ${scrollY * 0.3}px, 0)`
                     }}
                 />
+                {/* Page H1 — one per page */}
+                <div className="hero-title-overlay">
+                    <h1 className="hero-page-title">Our Leadership</h1>
+                </div>
             </section>
 
             {/* Leadership Team Header */}

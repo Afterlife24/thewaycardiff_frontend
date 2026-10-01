@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { getImageUrl } from '../imageConfig';
+import SEO from '../components/SEO';
 import './TheBelief.css';
 
 function TheBelief() {
@@ -28,6 +29,12 @@ function TheBelief() {
 
     return (
         <div className="home-page">
+            <SEO
+                title="What We Believe | The Way Church Cardiff"
+                description="Explore the core beliefs of The Way Church Cardiff — Scripture, the Godhead, salvation, the Holy Spirit, the person of Jesus Christ and the Church."
+                canonical="/the-belief"
+            />
+
             {/* Hero Section */}
             <section
                 ref={(el) => (sectionRefs.current[0] = el)}
@@ -39,6 +46,10 @@ function TheBelief() {
                     backgroundAttachment: 'fixed'
                 }}
             >
+                {/* Page H1 — one per page */}
+                <div className="hero-title-overlay">
+                    <h1 className="hero-page-title">What We Believe</h1>
+                </div>
             </section>
 
             {/* Split Section - Heading LEFT, Text RIGHT */}

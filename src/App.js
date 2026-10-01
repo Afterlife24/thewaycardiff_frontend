@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
+import Sundays from './pages/Sundays';
 import AboutTheStory from './pages/AboutTheStory';
 import TheBelief from './pages/TheBelief';
 import TheTeam from './pages/TheTeam';
@@ -20,6 +21,7 @@ function App() {
                 <main>
                     <Routes>
                         <Route path="/" element={<Home />} />
+                        <Route path="/sundays" element={<Sundays />} />
                         <Route path="/about-the-story" element={<AboutTheStory />} />
                         <Route path="/the-belief" element={<TheBelief />} />
                         <Route path="/the-team" element={<TheTeam />} />

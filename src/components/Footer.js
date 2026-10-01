@@ -21,7 +21,7 @@ function Footer() {
                         <img src={getImageUrl('iconTiktok')} alt="TikTok" />
                     </a>
                 </div>
-                <p>&copy; {new Date().getFullYear()} The Way Church Cardiff | Powered by Autonomiq<br />A Liberty Church Plant | <Link to="/policies" className="privacy-link">Policies</Link></p>
+                <p>&copy; {new Date().getFullYear()} The Way Church Cardiff | Powered by Autonomiq<br />A Liberty Church Plant | <Link to="/sundays" className="privacy-link">Sundays</Link> | <Link to="/policies" className="privacy-link">Policies</Link></p>
             </div>
         </footer>
     );

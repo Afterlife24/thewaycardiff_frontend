@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { getImageUrl } from '../imageConfig';
+import SEO from '../components/SEO';
 import './TheInvitation.css';
 
 function TheInvitation() {
@@ -41,6 +42,12 @@ function TheInvitation() {
 
     return (
         <div className="home-page">
+            <SEO
+                title="Get Involved | The Way Church Cardiff &amp; Penarth"
+                description="Connect, serve and give with The Way Church in Cardiff and Penarth. Take your next step with a church community walking faithfully together toward Jesus."
+                canonical="/the-invitation"
+            />
+
             {/* Hero Section */}
             <section
                 className="invitation-hero"
@@ -50,9 +57,14 @@ function TheInvitation() {
                     backgroundPosition: 'center',
                     backgroundAttachment: 'fixed',
                     height: '60vh',
-                    minHeight: '400px'
+                    minHeight: '400px',
+                    position: 'relative'
                 }}
             >
+                {/* Page H1 — one per page */}
+                <div className="hero-title-overlay">
+                    <h1 className="hero-page-title">Get Involved</h1>
+                </div>
             </section>
 
             {/* Section 1 - CONNECT (Split: Heading LEFT, Content RIGHT) */}

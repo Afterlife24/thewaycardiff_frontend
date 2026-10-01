@@ -1095,3 +1095,43 @@ html {
         max-height: none;
     }
 }
+
+/* ── Hero page title (H1) overlay ───────────────────────────────────────
+   Permanent, always-visible heading in the hero section.
+   Positioned at the bottom of the hero image so it doesn't conflict with
+   the dismissible Sunday popup. Uses pointer-events: none so it never
+   blocks interaction with other hero elements.
+   ─────────────────────────────────────────────────────────────────────── */
+.hero-title-overlay {
+    position: absolute;
+    bottom: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    width: 90%;
+    max-width: 720px;
+    text-align: center;
+    pointer-events: none;
+}
+
+.hero-page-title {
+    color: #ffffff;
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-weight: 300;
+    letter-spacing: 0.07em;
+    line-height: 1.35;
+    margin: 0;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.55);
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .hero-title-overlay {
+        bottom: 100px; /* lift above the Sunday popup on mobile */
+    }
+
+    .hero-page-title {
+        font-size: 1.1rem;
+        letter-spacing: 0.05em;
+    }
+}

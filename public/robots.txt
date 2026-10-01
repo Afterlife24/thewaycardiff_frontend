@@ -1,0 +1,11 @@
+# robots.txt — The Way Church Cardiff
+# https://thewaycardiff.co.uk
+
+User-agent: *
+Allow: /
+
+# Do not index the legal/policy page
+Disallow: /policies
+
+# Sitemap location
+Sitemap: https://thewaycardiff.co.uk/sitemap.xml

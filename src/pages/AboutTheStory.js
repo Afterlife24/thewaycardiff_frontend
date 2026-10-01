@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { getImageUrl } from '../imageConfig';
+import SEO from '../components/SEO';
 import './AboutTheStory.css';
 
 function AboutTheStory() {
@@ -30,6 +31,12 @@ function AboutTheStory() {
 
     return (
         <div className="home-page">
+            <SEO
+                title="About The Way Church | Cardiff &amp; Penarth"
+                description="Discover the story, vision, mission and values of The Way Church — a Christian church rooted in Cardiff, Penarth and the Vale of Glamorgan."
+                canonical="/about-the-story"
+            />
+
             {/* Hero Section - London building */}
             <section
                 ref={(el) => (sectionRefs.current[0] = el)}
@@ -41,6 +48,10 @@ function AboutTheStory() {
                     backgroundAttachment: 'fixed'
                 }}
             >
+                {/* Page H1 — one per page */}
+                <div className="hero-title-overlay">
+                    <h1 className="hero-page-title">About The Way Church</h1>
+                </div>
             </section>
 
             {/* The Reason Section - Heading LEFT, Text RIGHT */}

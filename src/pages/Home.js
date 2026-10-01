@@ -1,6 +1,49 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { getImageUrl } from '../imageConfig';
+import SEO from '../components/SEO';
 import './Home.css';
+
+/* -----------------------------------------------------------------------
+   JSON-LD — ReligiousOrganization schema for the homepage.
+   Also present on /sundays for richer local signal on that page.
+   ----------------------------------------------------------------------- */
+const homepageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ReligiousOrganization',
+    '@id': 'https://thewaycardiff.co.uk/#church',
+    name: 'The Way Church Cardiff',
+    alternateName: 'The Way Cardiff',
+    description:
+        'A Christian church gathering in Penarth and serving Cardiff, Cardiff Bay and the Vale of Glamorgan.',
+    url: 'https://thewaycardiff.co.uk',
+    logo: 'https://thewaycardiff.co.uk/images-new/logo.png',
+    address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'The Paget Rooms, Stanwell Road',
+        addressLocality: 'Penarth',
+        addressRegion: 'Vale of Glamorgan',
+        postalCode: 'CF64 3EG',
+        addressCountry: 'GB',
+    },
+    geo: {
+        '@type': 'GeoCoordinates',
+        latitude: '51.4344',
+        longitude: '-3.1761',
+    },
+    openingHoursSpecification: {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: 'Sunday',
+        opens: '11:00',
+        closes: '12:30',
+    },
+    sameAs: [
+        'https://www.youtube.com/channel/UCoxbIC_3Gr9b91S38SlML0w',
+        'https://www.instagram.com/thewaycardiff',
+        'https://www.facebook.com/share/1Bj44P8xUq/?mibextid=wwXIfr',
+        'https://www.tiktok.com/@thewaychurchcardiff',
+    ],
+};
 
 function Home() {
     const [scrollY, setScrollY] = useState(0);
@@ -91,6 +134,13 @@ function Home() {
 
     return (
         <div className="home-page">
+            <SEO
+                title="The Way Church Cardiff | Christian Church in Penarth"
+                description="The Way Church is a Christian church gathering in Penarth and serving Cardiff, Cardiff Bay and the Vale of Glamorgan. Join us Sundays at 11 AM at The Paget Rooms, Penarth."
+                canonical="/"
+                schema={homepageSchema}
+            />
+
             {/* Hero Section with WebP Background */}
             <section
                 ref={(el) => (sectionRefs.current[0] = el)}
@@ -98,9 +148,17 @@ function Home() {
             >
                 <img
                     src="/images-new/home-hero-video-compressed.webp"
-                    alt="The Way Church Cardiff"
+                    alt="The Way Church Cardiff — a Christian church in Penarth serving Cardiff and the Vale of Glamorgan"
                     className="hero-webp"
                 />
+
+                {/* Permanent H1 — one per page, signals location relevance to search engines */}
+                <div className="hero-title-overlay">
+                    <h1 className="hero-page-title">
+                        A Church in Penarth for Cardiff and The Vale
+                    </h1>
+                </div>
+
                 {showPopup && (
                     <div className="hero-popup-overlay">
                         <div className="hero-popup-content">
@@ -128,9 +186,9 @@ function Home() {
                         transform: `translate3d(0, ${(scrollY - (sectionRefs.current[5]?.offsetTop || 0)) * -0.2}px, 0)`
                     }}
                 >
-                    <h1 className="quote-text">
+                    <p className="quote-text">
                         Jesus told him, “I am the way, the truth, and the life. No one can come to the Father except through me. - John 14:6
-                    </h1>
+                    </p>
                 </div>
             </section>
 
@@ -151,9 +209,9 @@ function Home() {
             {/* Quote Section 2 */}
             <section className="quote-section" ref={(el) => (sectionRefs.current[5] = el)}>
                 <div className="section-content animate-in">
-                    <h1 className="quote-text">
+                    <p className="quote-text">
                         To go from Death to Life, where the Father's grace rewrites the story.
-                    </h1>
+                    </p>
                 </div>
             </section>
 
@@ -184,9 +242,9 @@ function Home() {
             {/* Quote Section 3 */}
             <section className="quote-section">
                 <div className="section-content animate-in">
-                    <h1 className="quote-text">
+                    <p className="quote-text">
                         To grow from life to fullness, where we abide in the Son, the hope of glory.
-                    </h1>
+                    </p>
                 </div>
             </section>
 
@@ -217,9 +275,9 @@ function Home() {
             {/* Quote Section 4 */}
             <section className="quote-section">
                 <div className="section-content animate-in">
-                    <h1 className="quote-text">
+                    <p className="quote-text">
                         To move from Fullness to Mission, where the Holy Spirit makes Christ's redemption known.
-                    </h1>
+                    </p>
                 </div>
             </section>
 
@@ -253,6 +311,12 @@ function Home() {
                     <h2>Where Do You Begin?</h2>
                     <p>
                         Every journey begins with a step, even when the way forward is unclear. The Way takes shape through relationship, shared life, and simple steps of obedience. Whether you are exploring faith, returning to church, or sensing a desire to walk with us in this season, you are warmly invited. You do not need to have all the answers, and you do not need to commit to anything. You are welcome to come as you are. If you are curious, interested, or quietly hopeful, we would love to hear from you. The Way is not about perfection, but about walking together toward Jesus, step by step, in faith, hope, and love.
+                    </p>
+                    {/* Internal link to Sundays page — important for crawlability and local relevance */}
+                    <p style={{ marginTop: '24px' }}>
+                        <Link to="/sundays" style={{ textDecoration: 'underline', textUnderlineOffset: '3px', opacity: 0.8 }}>
+                            Find out when and where we meet →
+                        </Link>
                     </p>
                 </div>
             </section>

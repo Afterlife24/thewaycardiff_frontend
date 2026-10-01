@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SEO from '../components/SEO';
 import './Policies.css';
 
 function Policies() {
@@ -10,6 +11,12 @@ function Policies() {
 
     return (
         <div className="policies-page">
+            <SEO
+                title="Policies | The Way Church Cardiff"
+                description="Privacy policy, privacy notice and data retention policy for The Way Church Cardiff."
+                canonical="/policies"
+                noindex={true}
+            />
             <div className="policies-container">
                 <div className="accordion">
                     {/* Privacy Policy */}

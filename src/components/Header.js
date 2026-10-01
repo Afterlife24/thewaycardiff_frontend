@@ -133,6 +133,7 @@ function Header() {
                 <nav className={`main-nav ${mobileMenuOpen ? 'mobile-open' : ''}`}>
                     <ul className="nav-menu">
                         <li><Link to="/" className={location.pathname === '/' ? 'active' : ''}>home</Link></li>
+                        <li><Link to="/sundays" className={location.pathname === '/sundays' ? 'active' : ''}>sundays</Link></li>
                         <li><Link to="/about-the-story" className={location.pathname === '/about-the-story' ? 'active' : ''}>the story</Link></li>
                         <li><Link to="/the-belief" className={location.pathname === '/the-belief' ? 'active' : ''}>the belief</Link></li>
                         <li><Link to="/the-team" className={location.pathname === '/the-team' ? 'active' : ''}>the team</Link></li>

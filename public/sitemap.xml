@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepage — highest priority local landing page -->
+  <url>
+    <loc>https://thewaycardiff.co.uk/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Sundays / Visit — primary local-intent landing page -->
+  <url>
+    <loc>https://thewaycardiff.co.uk/sundays</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- About the story -->
+  <url>
+    <loc>https://thewaycardiff.co.uk/about-the-story</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- What we believe -->
+  <url>
+    <loc>https://thewaycardiff.co.uk/the-belief</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Leadership team -->
+  <url>
+    <loc>https://thewaycardiff.co.uk/the-team</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Connect / Serve / Give -->
+  <url>
+    <loc>https://thewaycardiff.co.uk/the-invitation</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- /policies is intentionally excluded — noindex page -->
+
+</urlset>
